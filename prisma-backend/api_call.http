@@ -1,0 +1,94 @@
+
+
+###
+GET http://localhost:8000/users http/1.1
+
+###
+GET http://localhost:8000/users/dannie.14@gmai.com http/1.1
+
+###
+POST http://localhost:8000/users http/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Dane Antonie",
+    "lastName": "Undang",
+    "email": "dannie.14@gmai.com",
+    "password": "12356"
+}
+
+
+
+###  Doctor API
+GET http://localhost:8000/doctors http/1.1
+
+###
+GET http://localhost:8000/doctors/2 http/1.1
+
+###
+POST http://localhost:8000/doctors http/1.1
+Content-Type: application/json
+
+{
+    "name": "Arieanna Kate Undang",
+    "specialty": "Surgeon",
+    "degree": "MD",
+    "description": "Dr. Arieanna Undang is a board-certified cardiologist with over 15 years of experience. He specializes in the diagnosis and treatment of heart conditions, including coronary artery disease, heart failure, and arrhythmias.",
+    "contactNumber": "(555) 987-6543",
+    "email": "anika.undang@example.com",
+    "image": "images/John.jpg"
+}
+
+###
+PUT http://localhost:8000/doctors/3 http/1.1
+Content-Type: application/json
+
+{
+    "name": "Dane Antonie Undang",
+    "specialty": "Surgeon",
+    "degree": "MD",
+    "description": "Dr. Dane Undang is a board-certified cardiologist with over 15 years of experience. He specializes in the diagnosis and treatment of heart conditions, including coronary artery disease, heart failure, and arrhythmias.",
+    "contactNumber": "(555) 987-6543",
+    "email": "dane.undang@example.com",
+    "image": "images/John.jpg"
+}
+
+###
+DELETE  http://localhost:8000/doctors/1 http/1.1
+
+
+### Insurance API
+GET http://localhost:8000/insurances http/1.1
+
+###
+GET http://localhost:8000/insurances/1 http/1.1
+
+###
+POST http://localhost:8000/insurances http/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Dane Antonie",
+    "lastName": "Undang",
+    "dateOfBirth": "2003-08-14T00:00:00Z",
+    "insuranceProvider": "Sunlife",
+    "policyNumber": "POL012"
+}
+
+###
+PUT http://localhost:8000/insurances/1 http/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Dane",
+    "lastName": "Undang",
+    "dateOfBirth": "2003-08-14T00:00:00Z",
+    "insuranceProvider": "Sunlife",
+    "policyNumber": "POL011"
+}
+
+###
+DELETE  http://localhost:8000/insurances/1 http/1.1
+
+
+

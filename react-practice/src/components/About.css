@@ -1,0 +1,262 @@
+.Start_About,
+.Body_About,
+.Body_About-Last {
+  font-family: "serif";
+  color: #053370;
+}
+
+.Start_About {
+  background: linear-gradient(to right, rgb(177, 203, 255), rgb(61, 175, 255));
+  padding: 0;
+  display: flex;
+}
+
+.Start_About-Text {
+  flex: 1;
+  padding: 7.3% 11.9%;
+  margin: 0;
+}
+
+.Start_About-Image {
+  flex: 0 0 40%;
+  margin: 0;
+}
+
+.Start_About-Text h1 {
+  font-size: 5vw;
+  line-height: 0.8;
+  color: rgb(255, 255, 255);
+}
+
+.Start_About-Text h1:last-of-type {
+  margin-bottom: 5%;
+}
+
+.Start_About-Text p {
+  line-height: 1;
+  font-weight: 100;
+  letter-spacing: 0.5px;
+  font-family: monospace;
+  font-size: 1.5vw;
+  color: white;
+  margin-bottom: 0;
+}
+
+.Body_About {
+  background: linear-gradient(
+    to bottom,
+    rgb(233, 244, 252),
+    rgb(255, 255, 255)
+  );
+  padding: 0% 7.5%;
+  display: flex;
+}
+
+.Body_About-About-Text {
+  padding-right: 5%;
+}
+
+.Body_About-About h1 {
+  margin: 8% 0 12% 5%;
+  font-size: 5vw;
+  letter-spacing: -0.05em;
+}
+
+.Body_About-About h2 {
+  margin: 0% 4% 4% 5%;
+  font-weight: normal;
+  font-size: 2.5vw;
+  letter-spacing: -0.05em;
+}
+
+.Body_About-About p {
+  margin: 0 0 15% 5%;
+  font-size: 1.5vw;
+  letter-spacing: 0.05em;
+}
+
+.Body_Values h2 {
+  margin-top: 13vw;
+  margin-bottom: 2vw;
+}
+
+.Body_Values p {
+  margin: 0 0 2vw 5%;
+  font-size: 1.5vw;
+  letter-spacing: 0.1em;
+  padding-right: 5%;
+}
+
+/* Styles for Commitment */
+
+.Body-Commitment {
+  text-align: right;
+}
+
+.Body-Commitment h2 {
+  margin: 28% 5% 10% 5%;
+  font-weight: normal;
+  font-size: 3.5vw;
+  letter-spacing: -0.05em;
+}
+
+.Body-Commitment p {
+  margin: 0 5% 7.5% 2%;
+  font-size: 1.5vw;
+  line-height: 1.5vw;
+  letter-spacing: 0.1em;
+  padding-left: 5%;
+}
+
+/* Styles for Last Message */
+
+.Body_About-Last {
+  background: linear-gradient(to top, rgb(233, 244, 252), rgb(255, 255, 255));
+  text-align: center;
+}
+
+.Body_About-Last h1 {
+  padding-top: 13%;
+  margin: 0 0 1vw 0;
+  font-size: 5vw;
+  letter-spacing: -0.05em;
+}
+
+.Body_About-Last p {
+  margin: 2vw 0 0 0;
+  padding-bottom: 15vw;
+  font-size: 1.5vw;
+  letter-spacing: 0.05em;
+}
+
+/* Styles for Images */
+
+.Start_About-Image img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 75%;
+  border-bottom-left-radius: 75%;
+  border: 15px solid white;
+}
+
+.Body_About-Img {
+  min-width: 50%;
+  position: relative;
+}
+
+.Body_About-Img div {
+  position: relative;
+}
+
+.Body_About-Img2 img {
+  margin: 18% 0 5% 15%;
+  width: 37vw;
+  height: 27vw;
+  border-radius: 20px;
+  position: relative;
+}
+
+.Body_About-Img3 img {
+  margin: 5% 0 0 15%;
+  width: 37vw;
+  height: 25vw;
+  border-radius: 20px;
+  position: relative;
+}
+
+.Body_About-Img4 {
+  width: 20vw;
+  height: auto;
+  border-radius: 20px;
+  position: absolute;
+  top: 15%;
+  left: 79%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.Body_About-Img5 {
+  width: 30vw;
+  height: 25vw;
+  border-radius: 20px;
+  margin: 32.5% 5% 8% 15%;
+  position: relative;
+  z-index: 0;
+}
+
+.Body_About-Img6 img {
+  margin: 16.5% 0 0 8.5%;
+  width: 40vw;
+  height: 30vw;
+  border-radius: 20px;
+  position: relative;
+}
+
+/* Media Queries for Responsive Design */
+
+@media only screen and (max-width: 768px) {
+  .Start_About {
+    padding: 0% 0%;
+  }
+
+  .Start_About-Header h1 {
+    font-size: 5vw;
+  }
+
+  .Start_About-Paragraph p {
+    font-size: 3vw;
+  }
+
+  .Body_About-About h1 {
+    margin: 15% 0 8% 5%;
+    font-size: 10vw;
+  }
+
+  .Body_About-About h2 {
+    margin: 0 8% 8% 5%;
+    font-size: 5vw;
+  }
+
+  .Body_About-About p {
+    margin: 0 0 15% 5%;
+    font-size: 3vw;
+  }
+
+  .Body_Values h2 {
+    margin-top: 10vw;
+    margin-bottom: 5vw;
+  }
+
+  .Body_Values p {
+    margin: 0 0 5vw 5%;
+    font-size: 3vw;
+  }
+
+  .Body-Commitment h2 {
+    margin: 15% 5% 5% 5%;
+    font-size: 5vw;
+  }
+
+  .Body-Commitment p {
+    margin: 0 5% 5% 0;
+    font-size: 3vw;
+    line-height: 3vw;
+  }
+
+  .Body_About-Last h1 {
+    font-size: 10vw;
+  }
+
+  .Body_About-Last p {
+    font-size: 3vw;
+  }
+
+  .Body_About-Img2 img,
+  .Body_About-Img3 img,
+  .Body_About-Img4,
+  .Body_About-Img5,
+  .Body_About-Img6 img {
+    width: 80%;
+    margin: 15% 0 15% 15%;
+  }
+}

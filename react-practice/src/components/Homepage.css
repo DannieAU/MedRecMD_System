@@ -1,0 +1,46 @@
+.doctorImg {
+  position: relative;
+}
+
+.doctorImg img {
+  width: 100%;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 15%;
+  left: 65%;
+  text-align: right;
+  z-index: 1;
+  color: white;
+}
+
+.overlay-text h1 {
+  font-family: "YACgEcnJpjs 0", _fb_, auto;
+  font-size: 150px;
+  font-weight: bold;
+  line-height: 120px;
+  margin-bottom: 50px;
+}
+
+.overlay-text_p {
+  padding: 0%;
+  max-width: 70%;
+  margin-left: 1px;
+  float: left;
+}
+
+.overlay-text p {
+  font-weight: normal;
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 10px;
+}
+
+.Arrow {
+  position: relative;
+  padding: 0%;
+  margin: 10px 0px 0px 85px;
+  width: 100px;
+  float: left;
+}
