@@ -10,7 +10,6 @@ import Home from "./components/Homepage";
 import InsurancePage from "./components/InsurancePage";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
-import { Search } from "./components/Search";
 import SignupPage from "./components/Signup";
 import UpdateDoctorPage from "./components/UpdateDoctorPage";
 import UpdateInsurancePage from "./components/UpdateInsurancePage";
@@ -51,7 +50,6 @@ function App() {
             path="/login"
             element={<Login setIsLogin={setIsLogin} setUser={setUser} />}
           />
-          <Route exact path="/search" element={<Search />} />
           <Route exact path="/signup" element={<SignupPage />} />
           <Route exact path="/create-doctor" element={<CreateDoctorPage />} />
           <Route exact path="/create-insurance" element={<CreateInsurance />} />
