@@ -2,6 +2,7 @@
 
 import { User } from "@prisma/client";
 import cors from 'cors';
+import * as dotenv from 'dotenv';
 import express from "express";
 import {
   createDoctor,
@@ -18,6 +19,7 @@ import {
   updateInsurance,
 } from "./insurance";
 import { createUser, getUserByEmail, getUsers } from "./user";
+dotenv.config();
 
 const app = express();
 app.use(cors());
