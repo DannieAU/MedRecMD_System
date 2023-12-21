@@ -1,0 +1,7 @@
+# Node.js
+/node_modules
+../prisma-backend/node_modules/
+
+# Build artifacts
+/build
+/dist

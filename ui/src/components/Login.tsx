@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { User, getUser } from "../api";
+import { checkPassword } from "../util";
 import "./Login.css";
 interface LoginProps {
   setIsLogin: React.Dispatch<React.SetStateAction<boolean>>;
@@ -12,10 +13,6 @@ const Login: React.FC<LoginProps> = ({ setIsLogin, setUser }) => {
   const [username, setUsername] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  //   const handleLoginSignupToggle = () => {
-  //     setIsLogin(!isLogin);
-  //   };
-  //   const [isLogin, setIsLogin] = useState(false);
 
   const handlePasswordChange = (e: any) => {
     setPassword(e.target.value);
@@ -29,13 +26,15 @@ const Login: React.FC<LoginProps> = ({ setIsLogin, setUser }) => {
     e.preventDefault();
     const user: User = await getUser(username);
     console.log(user);
-    if (user.email === username && user.password === password) {
-      setIsLogin(true);
-      setUser(user);
-      navigate("/");
-    } else {
-      setErrorMessage("Access Denied");
-    }
+    checkPassword(password, user.password).then((isMatch) => {
+      if (isMatch) {
+        setIsLogin(true);
+        setUser(user);
+        navigate("/");
+      } else {
+        setErrorMessage("Access Denied");
+      }
+    });
   };
 
   return (

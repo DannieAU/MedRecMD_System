@@ -1,6 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
 const API_BASE_URL = 'http://localhost:8000';
+const SAND_ROUND = 10;
 
 export interface Doctor {
     id?:number;
@@ -72,7 +73,7 @@ export const createUser = async (
       password,
     });
 
-    if (response.status === 201) {
+    if (response.status === 200 || response.status === 201) {
       return response.data; // Assuming a successful creation returns a status code of 201
     } else {
       console.error('Unexpected status code:', response.status);
