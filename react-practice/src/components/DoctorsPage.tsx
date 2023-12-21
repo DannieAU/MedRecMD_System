@@ -1,3 +1,5 @@
+import { Snackbar } from "@mui/material";
+import * as React from "react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Doctor, deleteDoctor, getDoctors } from "../api";
@@ -10,6 +12,7 @@ interface DoctorsPageProps {
 const DoctorsPage: React.FC<DoctorsPageProps> = ({ isLogin, setNewDoctor }) => {
   const [doctors, setDoctors] = useState<Doctor[]>([]);
   const navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
@@ -29,10 +32,28 @@ const DoctorsPage: React.FC<DoctorsPageProps> = ({ isLogin, setNewDoctor }) => {
     navigate("/update-doctor");
   };
 
+  const removeDoctor = (doctorId: number | undefined) => {
+    const updatedDoctors = doctors.filter((doctor) => doctor.id !== doctorId);
+
+    setDoctors(updatedDoctors);
+  };
+
   const onDelete = async (doctor: Doctor) => {
     console.log(doctor);
+    removeDoctor(doctor.id);
     await deleteDoctor(doctor.id);
-    navigate("/");
+    setOpen(true);
+  };
+
+  const handleClose = (
+    event: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
@@ -68,6 +89,12 @@ const DoctorsPage: React.FC<DoctorsPageProps> = ({ isLogin, setNewDoctor }) => {
         </div>
       )}
       {!isLogin && navigate("/login")}
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message={`Doctor Deleted Successfully`}
+      />
     </>
   );
 };

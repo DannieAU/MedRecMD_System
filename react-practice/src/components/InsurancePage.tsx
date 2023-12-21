@@ -1,3 +1,5 @@
+import { Snackbar } from "@mui/material";
+import * as React from "react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Insurance, deleteInsurance, getInsurances } from "../api";
@@ -13,6 +15,7 @@ const InsurancePage: React.FC<InsurancePageProps> = ({
 }) => {
   const [insurances, setInsurances] = useState<Insurance[]>([]);
   const navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
 
   useEffect(() => {
     const fetchInsurances = async () => {
@@ -38,10 +41,30 @@ const InsurancePage: React.FC<InsurancePageProps> = ({
     navigate("/update-insurance");
   };
 
+  const removeInsurance = (insuranceId: number | undefined) => {
+    const updatedInsurances = insurances.filter(
+      (insurance) => insurance.id !== insuranceId
+    );
+
+    setInsurances(updatedInsurances);
+  };
+
   const onDelete = async (insurance: Insurance) => {
     console.log(insurance);
+    removeInsurance(insurance.id);
     await deleteInsurance(insurance.id);
-    navigate("/");
+    setOpen(true);
+  };
+
+  const handleClose = (
+    event: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
@@ -85,6 +108,12 @@ const InsurancePage: React.FC<InsurancePageProps> = ({
         </div>
       )}
       {!isLogin && navigate("/login")}
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message={`Insurance Deleted Successfully`}
+      />
     </>
   );
 };

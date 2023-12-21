@@ -127,7 +127,7 @@ export const createInsurance = async (
     const response: AxiosResponse<Insurance> = await api.post('/insurances', {
       firstName: insuranceData.firstName,
       lastName: insuranceData.lastName,
-      dateOfBirth: insuranceData.dateOfBirth,
+      dateOfBirth: new Date(insuranceData.dateOfBirth),
       insuranceProvider: insuranceData.insuranceProvider,
       policyNumber: insuranceData.policyNumber,
     });
