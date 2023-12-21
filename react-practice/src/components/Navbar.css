@@ -2,53 +2,52 @@
   background-color: rgb(255, 255, 255);
 }
 
+.navbar-logo {
+  width: 35%;
+}
+
 .navbar-logo img {
-  width: 500px;
-  max-width: 100%;
+  width: 70%;
   height: auto;
   display: block;
-  margin-left: 40px;
+  margin-left: 2rem;
 }
 
-.navbar-menu .search-icon img {
-  width: 50px;
-  margin-left: 60px;
-}
-
-/* Navbar menu styles */
 .navbar-menu {
   list-style: none;
   display: flex;
-  justify-content: space-around;
 }
 
 .navbar-menu li {
-  margin-top: 25px;
+  margin: 1.1vw 2.2vw 0 0;
 }
 
 .navbar-menu li:last-child {
-  margin-right: 20px; /* Adjusted margin for the last list item (LOGIN/SIGN UP) */
+  margin-left: 3rem;
 }
 
 .navbar-menu li a,
 .navbar-menu li span {
-  margin: 0 50px;
-  font-size: 25px;
+  margin: 0 1vw;
+  font-size: 1.5vw;
   text-decoration: none;
   color: black;
   cursor: pointer;
+  letter-spacing: 0.19vw;
 }
 
-.navbar-menu li a:hover,
-.navbar-menu li span:hover {
-  color: rgb(5, 12, 139);
-  background-color: rgb(192, 194, 226);
+.navbar-menu li a.active,
+.navbar-menu li a:hover {
+  color: rgb(137, 170, 235);
+  padding-bottom: 10px;
+  border-bottom: 5px solid rgb(137, 170, 235);
+  border-radius: 5%;
 }
 
 .welcome-user {
   width: 100%;
   text-align: right;
-  margin-right: 4%;
-  font-size: 24px;
-  color: rgb(5, 12, 139);
+  margin-right: 3.5%;
+  font-size: 2vw;
+  color: rgb(137, 170, 235);
 }
