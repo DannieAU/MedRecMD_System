@@ -37,7 +37,8 @@
 }
 
 .navbar-menu li a.active,
-.navbar-menu li a:hover {
+.navbar-menu li a:hover,
+.navbar-menu li span:hover {
   color: rgb(137, 170, 235);
   padding-bottom: 10px;
   border-bottom: 5px solid rgb(137, 170, 235);

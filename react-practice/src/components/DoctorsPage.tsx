@@ -13,6 +13,7 @@ const DoctorsPage: React.FC<DoctorsPageProps> = ({ isLogin, setNewDoctor }) => {
   const [doctors, setDoctors] = useState<Doctor[]>([]);
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
+  const [statusMessage, setStatusMessage] = React.useState("");
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
@@ -42,6 +43,7 @@ const DoctorsPage: React.FC<DoctorsPageProps> = ({ isLogin, setNewDoctor }) => {
     console.log(doctor);
     removeDoctor(doctor.id);
     await deleteDoctor(doctor.id);
+    setStatusMessage(`Doctor ${doctor.name} is deleted successfully`);
     setOpen(true);
   };
 
@@ -93,7 +95,7 @@ const DoctorsPage: React.FC<DoctorsPageProps> = ({ isLogin, setNewDoctor }) => {
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
-        message={`Doctor Deleted Successfully`}
+        message={statusMessage}
       />
     </>
   );

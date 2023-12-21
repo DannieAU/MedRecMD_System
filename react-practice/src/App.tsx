@@ -25,16 +25,14 @@ function App() {
       <div className="App">
         <Navbar isLogin={isLogin} setIsLogin={setIsLogin} user={user} />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route
-            exact
             path="/doctors"
             element={
               <DoctorsPage isLogin={isLogin} setNewDoctor={setNewDoctor} />
             }
           />
           <Route
-            exact
             path="/insurance"
             element={
               <InsurancePage
@@ -43,23 +41,20 @@ function App() {
               />
             }
           />
-          <Route exact path="/help" element={<Help />} />
-          <Route exact path="/about" element={<About />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/about" element={<About />} />
           <Route
-            exact
             path="/login"
             element={<Login setIsLogin={setIsLogin} setUser={setUser} />}
           />
-          <Route exact path="/signup" element={<SignupPage />} />
-          <Route exact path="/create-doctor" element={<CreateDoctorPage />} />
-          <Route exact path="/create-insurance" element={<CreateInsurance />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/create-doctor" element={<CreateDoctorPage />} />
+          <Route path="/create-insurance" element={<CreateInsurance />} />
           <Route
-            exact
             path="/update-doctor"
             element={<UpdateDoctorPage doctor={newDoctor} />}
           />
           <Route
-            exact
             path="/update-insurance"
             element={<UpdateInsurancePage insurance={newInsurance} />}
           />

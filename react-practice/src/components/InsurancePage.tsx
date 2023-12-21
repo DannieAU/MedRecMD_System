@@ -16,6 +16,7 @@ const InsurancePage: React.FC<InsurancePageProps> = ({
   const [insurances, setInsurances] = useState<Insurance[]>([]);
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
+  const [statusMessage, setStatusMessage] = React.useState("");
 
   useEffect(() => {
     const fetchInsurances = async () => {
@@ -53,6 +54,9 @@ const InsurancePage: React.FC<InsurancePageProps> = ({
     console.log(insurance);
     removeInsurance(insurance.id);
     await deleteInsurance(insurance.id);
+    setStatusMessage(
+      `Insurance of ${insurance.firstName} ${insurance.lastName} is deleted successfully`
+    );
     setOpen(true);
   };
 
@@ -112,7 +116,7 @@ const InsurancePage: React.FC<InsurancePageProps> = ({
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
-        message={`Insurance Deleted Successfully`}
+        message={statusMessage}
       />
     </>
   );

@@ -194,10 +194,11 @@ export const updateInsurance = async (
   insuranceData:Insurance
 ): Promise<Insurance> => {
   try { 
-    const response: AxiosResponse<Insurance> = await api.put(`/insurance/${insuranceData.id}`, {
+    const newDateOfBirth=new Date(insuranceData.dateOfBirth)
+    const response: AxiosResponse<Insurance> = await api.put(`/insurances/${insuranceData.id}`, {
       firstName: insuranceData.firstName,
       lastName: insuranceData.lastName,
-      dateOfBirth: insuranceData.dateOfBirth,
+      dateOfBirth: newDateOfBirth,
       insuranceProvider: insuranceData.insuranceProvider,
       policyNumber: insuranceData.policyNumber,
     });
